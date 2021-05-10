@@ -3,6 +3,7 @@
 # É principalmente aqui que usaremos o PySimpleGUI
 import PySimpleGUI as sg 
 from carbonmail.utils import inner_element_space
+from carbonmail.list_editor.manager import load_lists
 
 # Windows => Janela
 # Layout => O que vai mostrar na janela
@@ -10,7 +11,8 @@ from carbonmail.utils import inner_element_space
 #           Cada sublista é uma "linha" da janela
 #           Cada elemento é um componente visual
 
-lista = ['Administradores', 'Alunos']
+lista = load_lists()
+
 def get_layout():
 
     frame_campaign = [
@@ -30,7 +32,7 @@ def get_layout():
             sg.Text('Selecione a lista de destinatários'),
             sg.Combo(
                 lista,
-                lista[1],
+                lista[0],
                 key='-Lists-',
             ),
         ],

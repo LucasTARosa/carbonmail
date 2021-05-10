@@ -2,11 +2,12 @@
 # Tudo que existir de visual vai ficar aqui
 # É principalmente aqui que usaremos o PySimpleGUI
 
-from carbonmail.email_sender.view import get_window
+
 import PySimpleGUI as sg
 from carbonmail.utils import inner_element_space
+from carbonmail.list_editor.manager import load_lists
 
-lista = ['Administradores', 'Alunos']
+lista = load_lists()
 
 def get_layout():
     
@@ -14,7 +15,7 @@ def get_layout():
         inner_element_space(600),
         [
             sg.Text('Selecione a lista:'),
-            sg.Combo(lista, default_value = lista[1], key = '-List-')
+            sg.Combo(lista, default_value = lista[0], key = '-Lists-')
         ],
         [
             sg.Text('Criar uma lista:'),
@@ -30,7 +31,7 @@ def get_layout():
             ),
             sg.Button(
                 'Mostrar Contatos',
-                key = '-Delete-',
+                key = '-ShowContacts-',
                 size = (15, 1),
                 pad=(5, (7, 7)),                
             ),
