@@ -23,8 +23,8 @@ def create_list(list_name):
 def create_contact(name, email, list_id):
     connection = connect()
 
-    sql = f'INSERT INTO contact (name, email, list_id) \
-            VALUES ({name}, {email}, {list_id});'
+    sql = f"INSERT INTO contact (name, email, list_id) \
+            VALUES ('{name}', '{email}', '{list_id}');"
     insert(connection, sql)
 
     close_connection(connection)

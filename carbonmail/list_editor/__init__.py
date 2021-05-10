@@ -72,7 +72,7 @@ class List_Editor:
             
             elif event == '-ShowContacts-':
                 contacts_list = [
-                    f'{connect[0]} <{contact[1]}>'
+                    f'{contact[0]} <{contact[1]}>'
                     for contact in get_list_contacts(self.lists)
                 ]
                 contacts = '\n'.join(contacts_list)
