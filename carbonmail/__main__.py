@@ -7,3 +7,5 @@ from carbonmail.database.initializer import initialize as init_db
 
 init_db()
 init_sender()
+
+

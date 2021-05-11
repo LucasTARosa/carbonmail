@@ -16,11 +16,13 @@ def inner_element_space(width=100):
     ]
 
 def root_folder():
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(sys.executable)
     try: 
         main_file = os.path.abspath(sys.modules['__main__'].__file__)
     except:
         main_file = sys.executable
-    
+        
     return os.path.join(os.path.dirname(main_file), os.pardir)
 
 def string_null_or_empty(string):

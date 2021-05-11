@@ -45,4 +45,4 @@ def download_image(code_path):
 
     return image_path
 
-    response.content
+    
